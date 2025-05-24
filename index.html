@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Menus - Restaurant</title>
   <style>
     body {
@@ -19,11 +19,6 @@
       text-align: center;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -37,10 +32,32 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .gallery img:hover {
       transform: scale(1.03);
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
     }
 
     footer {
@@ -54,26 +71,35 @@
 </head>
 <body>
 
-  <header>
-    <h1>Nos Menus</h1>
-    <p>Découvrez les spécialités de notre restaurant</p>
-  </header>
+<header>
+  <h1>Nos Menus</h1>
+  <p>Découvrez les spécialités de notre restaurant</p>
+</header>
 
-  <section class="gallery">
-    <img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087044/pizza1_grwsvo.jpg" alt="Menu Pizza 1">
-    <img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748086986/Pizza_pnna2y.jpg" alt="Menu Pizza 2">
-    <img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748086978/poutine_z1oq1n.jpg" alt="Menu Poutine">
-    <img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087038/burger_zn7di4.jpg" alt="Menu Burger">
-    <img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087029/Cryspy__tpi6t9.jpg" alt="Menu Crispy">
-    <img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087025/Tacos__eaz8yl.jpg" alt="Menu tacos">
-    <img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087042/dessert_yjqarr.jpg" alt="Menu Dessert">
-    <img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087039/jus_heorlz.jpg" alt="Menu Jus">
-   
-  </section>
+<section class="gallery">
+  <a href="#img1"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087044/pizza1_grwsvo.jpg" alt="Menu Pizza 1" /></a>
+  <a href="#img2"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748086986/Pizza_pnna2y.jpg" alt="Menu Pizza 2" /></a>
+  <a href="#img3"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748086978/poutine_z1oq1n.jpg" alt="Menu Poutine" /></a>
+  <a href="#img4"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087038/burger_zn7di4.jpg" alt="Menu Burger" /></a>
+  <a href="#img5"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087029/Cryspy__tpi6t9.jpg" alt="Menu Crispy" /></a>
+  <a href="#img6"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087025/Tacos__eaz8yl.jpg" alt="Menu Tacos" /></a>
+  <a href="#img7"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087042/dessert_yjqarr.jpg" alt="Menu Dessert" /></a>
+  <a href="#img8"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087039/jus_heorlz.jpg" alt="Menu Jus" /></a>
+</section>
 
-  <footer>
-    &copy; 2025 Rooster King. Tous droits réservés.
-  </footer>
+<!-- Lightbox containers -->
+<div id="img1" class="lightbox" onclick="location.hash='';"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087044/pizza1_grwsvo.jpg" /></div>
+<div id="img2" class="lightbox" onclick="location.hash='';"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748086986/Pizza_pnna2y.jpg" /></div>
+<div id="img3" class="lightbox" onclick="location.hash='';"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748086978/poutine_z1oq1n.jpg" /></div>
+<div id="img4" class="lightbox" onclick="location.hash='';"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087038/burger_zn7di4.jpg" /></div>
+<div id="img5" class="lightbox" onclick="location.hash='';"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087029/Cryspy__tpi6t9.jpg" /></div>
+<div id="img6" class="lightbox" onclick="location.hash='';"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087025/Tacos__eaz8yl.jpg" /></div>
+<div id="img7" class="lightbox" onclick="location.hash='';"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087042/dessert_yjqarr.jpg" /></div>
+<div id="img8" class="lightbox" onclick="location.hash='';"><img src="https://res.cloudinary.com/dj06qdexc/image/upload/v1748087039/jus_heorlz.jpg" /></div>
+
+<footer>
+  &copy; 2025 Rooster King. Tous droits réservés.
+</footer>
 
 </body>
 </html>
